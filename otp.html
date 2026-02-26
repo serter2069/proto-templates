@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    body { justify-content: center; }
+    .back { position: absolute; top: var(--space-lg); left: var(--space-lg); font-size: 24px; text-decoration: none; color: var(--text); }
+    .email-highlight { color: var(--primary); font-weight: 600; }
+    .timer { color: var(--text-muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+    .timer b { color: var(--primary); }
+  </style>
+</head>
+<body>
+  <a href="login.html" class="back">←</a>
+
+  <div class="container stack stack-lg text-center">
+    <div>
+      <h1 class="h2">Enter the code</h1>
+      <p class="text-muted mt-sm">We sent a 6-digit code to<br><span class="email-highlight">user@example.com</span></p>
+    </div>
+
+    <div class="card stack stack-lg">
+      <div class="otp-group">
+        <input class="otp-digit" type="text" maxlength="1" value="4" readonly>
+        <input class="otp-digit" type="text" maxlength="1" value="8" readonly>
+        <input class="otp-digit" type="text" maxlength="1" value="2" readonly>
+        <input class="otp-digit" type="text" maxlength="1" placeholder="·">
+        <input class="otp-digit" type="text" maxlength="1" placeholder="·">
+        <input class="otp-digit" type="text" maxlength="1" placeholder="·">
+      </div>
+
+      <button class="btn btn-primary" disabled>Verify</button>
+    </div>
+
+    <p class="timer">Resend code in <b>0:42</b></p>
+    <button class="btn btn-ghost">Use a different email</button>
+  </div>
+</body>
+</html>

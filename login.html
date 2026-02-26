@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    body { justify-content: center; }
+    .back { position: absolute; top: var(--space-lg); left: var(--space-lg); font-size: 24px; text-decoration: none; color: var(--text); }
+    .social-row { display: flex; gap: var(--space-sm); }
+    .social-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: var(--space-sm); padding: 12px; font-family: inherit; font-size: 14px; font-weight: 600; background: var(--surface); border: var(--border-w) solid var(--border); border-radius: var(--radius-sm); box-shadow: var(--shadow-sm); cursor: pointer; }
+    .social-icon { font-size: 20px; }
+  </style>
+</head>
+<body>
+  <a href="welcome.html" class="back">←</a>
+
+  <div class="container stack stack-lg">
+    <div>
+      <div class="logo">Date<span class="logo-accent">Rabbit</span></div>
+      <p class="text-muted mt-sm">Enter your email to continue</p>
+    </div>
+
+    <div class="card stack stack-md">
+      <div>
+        <label class="label" for="email">Email</label>
+        <input class="input" type="email" id="email" placeholder="you@example.com" autocomplete="email">
+      </div>
+      <a href="otp.html" class="btn btn-primary">Send Code</a>
+    </div>
+
+    <div class="divider">or continue with</div>
+
+    <div class="social-row">
+      <button class="social-btn"><span class="social-icon">G</span> Google</button>
+      <button class="social-btn"><span class="social-icon">🍎</span> Apple</button>
+    </div>
+
+    <p class="small text-muted text-center mt-md">
+      By continuing you agree to our Terms of Service and Privacy Policy
+    </p>
+  </div>
+</body>
+</html>

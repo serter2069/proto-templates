@@ -1,0 +1,183 @@
+/* Neo-Brutalism Components */
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+/* Card */
+.card {
+  background: var(--surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-xl);
+}
+
+/* Button - Primary */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 14px var(--space-lg);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.btn-outline {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Input */
+.input {
+  display: block;
+  width: 100%;
+  padding: 14px var(--space-md);
+  font-family: inherit;
+  font-size: 16px;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+.input:focus {
+  box-shadow: var(--shadow-sm);
+}
+
+.input::placeholder {
+  color: var(--text-light);
+}
+
+/* Label */
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+/* Logo */
+.logo {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo-accent {
+  color: var(--primary);
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: var(--border-light);
+}
+
+/* OTP Input group */
+.otp-group {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+}
+
+.otp-digit {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: inherit;
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  outline: none;
+}
+
+.otp-digit:focus {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--primary);
+}
+
+/* Tag / Badge */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--secondary);
+}
+
+/* Spacing utilities */
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-xxl { margin-top: var(--space-xxl); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+
+/* Stack layout */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack-sm { gap: var(--space-sm); }
+.stack-md { gap: var(--space-md); }
+.stack-lg { gap: var(--space-lg); }

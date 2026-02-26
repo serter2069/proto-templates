@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="components.css">
+  <style>
+    body { justify-content: space-between; min-height: 100vh; padding: var(--space-xxl) var(--space-lg); }
+    .hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-lg); }
+    .hero-icon { width: 80px; height: 80px; background: var(--primary); border: var(--border-w) solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .tagline { color: var(--text-muted); font-size: 16px; max-width: 260px; }
+    .actions { width: 100%; max-width: 375px; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-icon">🐇</div>
+    <div class="logo text-center">Date<span class="logo-accent">Rabbit</span></div>
+    <p class="tagline text-center">Find your perfect date experience. Real people, real moments.</p>
+    <span class="tag">Neo-Brutalism UI</span>
+  </div>
+
+  <div class="actions stack stack-md">
+    <a href="login.html" class="btn btn-primary">Get Started</a>
+    <a href="login.html" class="btn btn-outline">I have an account</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy → proto.smartlaunchhub.com
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate version.json
+        run: |
+          cat > version.json << EOF
+          {
+            "version": "$(git rev-parse --short HEAD)",
+            "branch": "${{ github.ref_name }}",
+            "deployed": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+
+      - name: Deploy static files
+        run: |
+          sudo mkdir -p /var/www/proto
+          rsync -av --delete --exclude '.git' --exclude '.github' ./ /var/www/proto/
+          sudo chown -R www-data:www-data /var/www/proto/
