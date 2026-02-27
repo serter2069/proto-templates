@@ -368,3 +368,20 @@ body {
   font-size: 12px;
   font-weight: 600;
 }
+
+/* ═══ Iconify icons (grayscale in wireframe) ═══ */
+iconify-icon {
+  color: var(--wf-muted);
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+/* ═══ Real images (grayscale in wireframe) ═══ */
+.wf-photo {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1.5px solid var(--wf-border);
+  filter: grayscale(30%);
+}

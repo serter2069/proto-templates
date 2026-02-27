@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wireframe — Login (EXAMPLE)</title>
+  <title>Wireframe — Dashboard (EXAMPLE)</title>
   <link rel="stylesheet" href="wireframe.css">
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2/dist/iconify-icon.min.js"></script>
   <style>
-    /* Page-level note banner */
     .example-banner {
       max-width: 430px;
       margin: 0 auto 0;
@@ -20,72 +20,270 @@
       letter-spacing: 0.5px;
     }
     .example-banner span { color: #FFD600; }
+
+    /* Hero image */
+    .hero-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1.5px solid var(--wf-border);
+    }
+
+    /* Card with image */
+    .feed-card {
+      background: var(--wf-white);
+      border: 1.5px solid var(--wf-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .feed-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+    .feed-card-body {
+      padding: 12px 16px;
+    }
+
+    /* Icon styling for wireframe (gray, consistent) */
+    iconify-icon {
+      color: var(--wf-muted);
+      font-size: 20px;
+    }
+    .wf-nav-item.active iconify-icon {
+      color: var(--wf-text);
+    }
+
+    /* Search bar */
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 44px;
+      padding: 0 14px;
+      border: 1.5px solid var(--wf-border);
+      border-radius: 22px;
+      background: var(--wf-light);
+    }
+    .search-bar input {
+      border: none;
+      background: none;
+      font-family: var(--wf-font);
+      font-size: 14px;
+      outline: none;
+      flex: 1;
+      color: var(--wf-text);
+    }
+    .search-bar input::placeholder { color: var(--wf-muted); }
+
+    /* Category chips */
+    .chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px 0;
+    }
+    .chip {
+      flex-shrink: 0;
+      padding: 6px 14px;
+      border: 1.5px solid var(--wf-border);
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--wf-muted);
+      background: var(--wf-white);
+      white-space: nowrap;
+    }
+    .chip.active {
+      background: var(--wf-text);
+      color: var(--wf-white);
+      border-color: var(--wf-text);
+    }
+
+    /* Stats row */
+    .stat-box {
+      flex: 1;
+      background: var(--wf-light);
+      border: 1.5px solid var(--wf-border);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--wf-text);
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--wf-muted);
+      margin-top: 2px;
+    }
   </style>
 </head>
 <body>
 
   <div class="example-banner">
-    <span>WIREFRAME EXAMPLE</span> — No brand colors, no custom fonts. Structure only.
+    <span>WIREFRAME EXAMPLE</span> — Icons (iconify) + images (picsum). No brand colors.
   </div>
 
   <div class="screen">
 
-    <!-- Status bar -->
-    <div class="status-bar">
-      <span>9:41</span>
-      <span>⚡ 100%</span>
-    </div>
-
-    <!-- Screen body -->
-    <div class="screen-body">
-
-      <!-- Logo placeholder -->
-      <div class="wf-mt-32 wf-center" style="display:flex; flex-direction:column; align-items:center;">
-        <div class="wf-img" style="width:64px; height:64px; border-radius:16px;">LOGO</div>
-        <div class="wf-h1 wf-mt-16">Welcome</div>
-        <div class="wf-body wf-mt-8" style="color:var(--wf-muted); text-align:center;">Sign in to continue to<br>your account</div>
-      </div>
-
-      <!-- Form -->
-      <div class="wf-stack wf-gap-16 wf-mt-32">
+    <!-- Header -->
+    <div class="wf-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="wf-avatar">S</div>
         <div>
-          <label class="wf-label">Email</label>
-          <input class="wf-input" type="email" placeholder="your@email.com">
+          <div style="font-size:15px; font-weight:600;">Good morning</div>
+          <div style="font-size:12px; color:var(--wf-muted);">Sarah Miller</div>
         </div>
+      </div>
+      <div style="display:flex; gap:12px;">
+        <iconify-icon icon="lucide:bell"></iconify-icon>
+        <iconify-icon icon="lucide:settings"></iconify-icon>
+      </div>
+    </div>
 
-        <button class="wf-btn">Send Code</button>
+    <div class="screen-body" style="gap:20px; padding-bottom:8px;">
 
-        <div class="wf-note">
-          → Sends OTP to email. No password auth.<br>
-          → Rate limit: 1 code per 60 sec.
+      <!-- Search -->
+      <div class="search-bar">
+        <iconify-icon icon="lucide:search" style="font-size:18px;"></iconify-icon>
+        <input type="text" placeholder="Search events, places...">
+        <iconify-icon icon="lucide:sliders-horizontal" style="font-size:18px;"></iconify-icon>
+      </div>
+
+      <!-- Hero banner with real image -->
+      <div style="position:relative;">
+        <img class="hero-img" src="https://picsum.photos/seed/wireframe-hero/400/200" alt="Featured event">
+        <div style="position:absolute; bottom:12px; left:12px; right:12px;">
+          <div class="wf-badge" style="background:var(--wf-white);">Featured</div>
+          <div style="font-size:17px; font-weight:700; color:#fff; text-shadow:0 1px 4px rgba(0,0,0,0.6); margin-top:4px;">
+            Weekend Music Festival
+          </div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.9); text-shadow:0 1px 3px rgba(0,0,0,0.5);">
+            <iconify-icon icon="lucide:map-pin" style="font-size:12px; color:#fff;"></iconify-icon>
+            Central Park · Mar 15
+          </div>
         </div>
       </div>
 
-      <!-- Divider -->
-      <div class="wf-divider wf-mt-24">or continue with</div>
-
-      <!-- Social buttons -->
-      <div class="wf-stack wf-gap-12 wf-mt-24">
-        <button class="wf-btn wf-btn-secondary wf-row wf-gap-8" style="justify-content:center;">
-          <div class="wf-img" style="width:20px; height:20px; border-radius:4px; border:none;">G</div>
-          Google
-        </button>
-        <button class="wf-btn wf-btn-secondary wf-row wf-gap-8" style="justify-content:center;">
-          <div class="wf-img" style="width:20px; height:20px; border-radius:4px; border:none;">A</div>
-          Apple
-        </button>
+      <!-- Stats -->
+      <div style="display:flex; gap:10px;">
+        <div class="stat-box">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Upcoming</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">4</div>
+          <div class="stat-label">This week</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">28</div>
+          <div class="stat-label">Friends</div>
+        </div>
       </div>
 
-      <!-- Footer links -->
-      <div style="margin-top:auto; padding-top:24px; text-align:center;">
-        <div class="wf-caption">
-          By continuing, you agree to our
-          <a href="#" style="color:var(--wf-text); font-weight:600;">Terms</a> &
-          <a href="#" style="color:var(--wf-text); font-weight:600;">Privacy</a>
+      <!-- Categories -->
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div class="wf-h2">Explore</div>
+          <a class="wf-btn-link" style="width:auto; font-size:13px;">See all</a>
         </div>
+        <div class="chips">
+          <div class="chip active">All</div>
+          <div class="chip"><iconify-icon icon="lucide:music" style="font-size:14px; vertical-align:-2px;"></iconify-icon> Music</div>
+          <div class="chip"><iconify-icon icon="lucide:utensils" style="font-size:14px; vertical-align:-2px;"></iconify-icon> Food</div>
+          <div class="chip"><iconify-icon icon="lucide:palette" style="font-size:14px; vertical-align:-2px;"></iconify-icon> Art</div>
+          <div class="chip"><iconify-icon icon="lucide:dumbbell" style="font-size:14px; vertical-align:-2px;"></iconify-icon> Sport</div>
+        </div>
+      </div>
+
+      <!-- Feed cards with real images -->
+      <div class="wf-stack wf-gap-16">
+
+        <div class="feed-card">
+          <img src="https://picsum.photos/seed/wireframe-1/400/160" alt="Event photo">
+          <div class="feed-card-body">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+              <div>
+                <div style="font-size:15px; font-weight:600;">Jazz Night Downtown</div>
+                <div style="font-size:12px; color:var(--wf-muted); margin-top:2px;">
+                  <iconify-icon icon="lucide:calendar" style="font-size:12px; vertical-align:-1px;"></iconify-icon>
+                  Sat, Mar 8 · 8:00 PM
+                </div>
+                <div style="font-size:12px; color:var(--wf-muted); margin-top:2px;">
+                  <iconify-icon icon="lucide:map-pin" style="font-size:12px; vertical-align:-1px;"></iconify-icon>
+                  Blue Note Cafe
+                </div>
+              </div>
+              <iconify-icon icon="lucide:heart" style="font-size:20px; cursor:pointer;"></iconify-icon>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px; margin-top:8px;">
+              <div class="wf-avatar" style="width:20px; height:20px; font-size:9px;">A</div>
+              <div class="wf-avatar" style="width:20px; height:20px; font-size:9px;">B</div>
+              <div class="wf-avatar" style="width:20px; height:20px; font-size:9px;">C</div>
+              <span style="font-size:11px; color:var(--wf-muted);">+5 going</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="feed-card">
+          <img src="https://picsum.photos/seed/wireframe-2/400/160" alt="Event photo">
+          <div class="feed-card-body">
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+              <div>
+                <div style="font-size:15px; font-weight:600;">Street Food Market</div>
+                <div style="font-size:12px; color:var(--wf-muted); margin-top:2px;">
+                  <iconify-icon icon="lucide:calendar" style="font-size:12px; vertical-align:-1px;"></iconify-icon>
+                  Sun, Mar 9 · 11:00 AM
+                </div>
+                <div style="font-size:12px; color:var(--wf-muted); margin-top:2px;">
+                  <iconify-icon icon="lucide:map-pin" style="font-size:12px; vertical-align:-1px;"></iconify-icon>
+                  Brooklyn Bridge Park
+                </div>
+              </div>
+              <iconify-icon icon="lucide:heart" style="font-size:20px; cursor:pointer;"></iconify-icon>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="wf-note">
+        → Cards load from API with pagination (cursor-based).<br>
+        → Heart icon toggles favorite (optimistic update).<br>
+        → Pull-to-refresh reloads feed.<br>
+        → Empty state: "No events nearby" + CTA to expand radius.
       </div>
 
     </div>
+
+    <!-- Bottom nav with icons -->
+    <div class="wf-bottom-nav">
+      <a class="wf-nav-item active">
+        <iconify-icon icon="lucide:home"></iconify-icon>
+        <span>Home</span>
+      </a>
+      <a class="wf-nav-item">
+        <iconify-icon icon="lucide:compass"></iconify-icon>
+        <span>Explore</span>
+      </a>
+      <a class="wf-nav-item">
+        <iconify-icon icon="lucide:plus-circle"></iconify-icon>
+        <span>Create</span>
+      </a>
+      <a class="wf-nav-item">
+        <iconify-icon icon="lucide:message-circle"></iconify-icon>
+        <span>Chat</span>
+      </a>
+      <a class="wf-nav-item">
+        <iconify-icon icon="lucide:user"></iconify-icon>
+        <span>Profile</span>
+      </a>
+    </div>
+
   </div>
 
 </body>
