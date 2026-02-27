@@ -211,14 +211,20 @@ function main() {
   let totalViolations = 0;
   const results = {};
 
-  // Brandbook is exempt from most checks (it demos individual values)
+  // Exempt files: brandbook (reference) and wireframes (no brand styles by design)
   const exemptFiles = ['brandbook.html'];
+  const exemptPrefixes = ['wireframe-'];
 
   for (const file of htmlFiles) {
     const fileName = path.basename(file);
 
     if (exemptFiles.includes(fileName)) {
       console.log(`✓ ${fileName} (exempt — reference page)`);
+      continue;
+    }
+
+    if (exemptPrefixes.some(p => fileName.startsWith(p))) {
+      console.log(`✓ ${fileName} (exempt — wireframe, no brand styles)`);
       continue;
     }
 
