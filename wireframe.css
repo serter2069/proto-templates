@@ -1,0 +1,370 @@
+/* ═══ WIREFRAME BASE ═══ */
+/* Universal wireframe styles. NO brand colors, NO custom fonts. */
+/* Purpose: structure + layout + flow ONLY. */
+
+:root {
+  --wf-white: #FFFFFF;
+  --wf-light: #F5F5F5;
+  --wf-border: #D0D0D0;
+  --wf-text: #333333;
+  --wf-muted: #999999;
+  --wf-action: #666666;
+  --wf-font: -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--wf-font);
+  font-weight: 400;
+  background: var(--wf-light);
+  color: var(--wf-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ═══ Mobile container (430px) ═══ */
+.screen {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--wf-white);
+  border-left: 1px solid var(--wf-border);
+  border-right: 1px solid var(--wf-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.screen-body {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══ Typography ═══ */
+.wf-h1 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--wf-text);
+}
+
+.wf-h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--wf-text);
+}
+
+.wf-body {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--wf-text);
+}
+
+.wf-caption {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--wf-muted);
+}
+
+/* ═══ Status bar (top) ═══ */
+.status-bar {
+  height: 44px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--wf-text);
+  border-bottom: 1px solid var(--wf-border);
+}
+
+/* ═══ Header ═══ */
+.wf-header {
+  height: 56px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--wf-border);
+}
+
+.wf-header-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.wf-back {
+  font-size: 14px;
+  color: var(--wf-action);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ═══ Buttons ═══ */
+.wf-btn {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 20px;
+  font-family: var(--wf-font);
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid var(--wf-text);
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  background: var(--wf-text);
+  color: var(--wf-white);
+}
+
+.wf-btn-secondary {
+  background: var(--wf-white);
+  color: var(--wf-text);
+}
+
+.wf-btn-link {
+  background: none;
+  border: none;
+  color: var(--wf-action);
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  font-family: var(--wf-font);
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ═══ Inputs ═══ */
+.wf-input {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font-family: var(--wf-font);
+  font-size: 15px;
+  border: 1.5px solid var(--wf-border);
+  border-radius: 8px;
+  background: var(--wf-white);
+  color: var(--wf-text);
+  outline: none;
+}
+
+.wf-input:focus {
+  border-color: var(--wf-text);
+}
+
+.wf-input::placeholder {
+  color: var(--wf-muted);
+}
+
+.wf-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--wf-text);
+  margin-bottom: 6px;
+}
+
+.wf-error {
+  font-size: 12px;
+  color: #C00;
+  margin-top: 4px;
+}
+
+/* ═══ Cards ═══ */
+.wf-card {
+  background: var(--wf-white);
+  border: 1.5px solid var(--wf-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* ═══ Placeholder image ═══ */
+.wf-img {
+  background: var(--wf-light);
+  border: 1.5px dashed var(--wf-border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--wf-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ═══ Avatar ═══ */
+.wf-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--wf-light);
+  border: 1.5px solid var(--wf-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--wf-muted);
+}
+
+/* ═══ Divider ═══ */
+.wf-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--wf-muted);
+  font-size: 12px;
+}
+
+.wf-divider::before,
+.wf-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--wf-border);
+}
+
+/* ═══ OTP ═══ */
+.wf-otp-group {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.wf-otp-digit {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--wf-font);
+  border: 1.5px solid var(--wf-border);
+  border-radius: 8px;
+  background: var(--wf-white);
+  outline: none;
+}
+
+/* ═══ Bottom nav ═══ */
+.wf-bottom-nav {
+  height: 56px;
+  border-top: 1px solid var(--wf-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 16px;
+  background: var(--wf-white);
+  margin-top: auto;
+}
+
+.wf-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-size: 10px;
+  color: var(--wf-muted);
+  text-decoration: none;
+}
+
+.wf-nav-item.active {
+  color: var(--wf-text);
+  font-weight: 600;
+}
+
+.wf-nav-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--wf-light);
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+}
+
+.wf-nav-item.active .wf-nav-icon {
+  background: var(--wf-border);
+}
+
+/* ═══ Badge ═══ */
+.wf-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--wf-border);
+  border-radius: 4px;
+  background: var(--wf-light);
+  color: var(--wf-text);
+}
+
+/* ═══ List item ═══ */
+.wf-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--wf-light);
+}
+
+.wf-list-item:last-child {
+  border-bottom: none;
+}
+
+/* ═══ Spacing helpers ═══ */
+.wf-gap-4 { gap: 4px; }
+.wf-gap-8 { gap: 8px; }
+.wf-gap-12 { gap: 12px; }
+.wf-gap-16 { gap: 16px; }
+.wf-gap-24 { gap: 24px; }
+
+.wf-mt-8 { margin-top: 8px; }
+.wf-mt-16 { margin-top: 16px; }
+.wf-mt-24 { margin-top: 24px; }
+.wf-mt-32 { margin-top: 32px; }
+.wf-mb-8 { margin-bottom: 8px; }
+.wf-mb-16 { margin-bottom: 16px; }
+.wf-mb-24 { margin-bottom: 24px; }
+
+.wf-stack { display: flex; flex-direction: column; }
+.wf-row { display: flex; align-items: center; }
+.wf-between { justify-content: space-between; }
+.wf-center { text-align: center; align-items: center; justify-content: center; }
+.wf-flex-1 { flex: 1; }
+
+/* ═══ Annotation (for wireframe notes) ═══ */
+.wf-note {
+  background: #FFFDE7;
+  border: 1px dashed #E0C000;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+}
+
+/* ═══ Arrow / flow indicator ═══ */
+.wf-flow {
+  text-align: center;
+  padding: 8px 0;
+  color: var(--wf-muted);
+  font-size: 12px;
+  font-weight: 600;
+}

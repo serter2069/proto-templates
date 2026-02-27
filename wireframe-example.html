@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe — Login (EXAMPLE)</title>
+  <link rel="stylesheet" href="wireframe.css">
+  <style>
+    /* Page-level note banner */
+    .example-banner {
+      max-width: 430px;
+      margin: 0 auto 0;
+      background: #333;
+      color: #fff;
+      padding: 12px 20px;
+      font-family: -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    .example-banner span { color: #FFD600; }
+  </style>
+</head>
+<body>
+
+  <div class="example-banner">
+    <span>WIREFRAME EXAMPLE</span> — No brand colors, no custom fonts. Structure only.
+  </div>
+
+  <div class="screen">
+
+    <!-- Status bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <span>⚡ 100%</span>
+    </div>
+
+    <!-- Screen body -->
+    <div class="screen-body">
+
+      <!-- Logo placeholder -->
+      <div class="wf-mt-32 wf-center" style="display:flex; flex-direction:column; align-items:center;">
+        <div class="wf-img" style="width:64px; height:64px; border-radius:16px;">LOGO</div>
+        <div class="wf-h1 wf-mt-16">Welcome</div>
+        <div class="wf-body wf-mt-8" style="color:var(--wf-muted); text-align:center;">Sign in to continue to<br>your account</div>
+      </div>
+
+      <!-- Form -->
+      <div class="wf-stack wf-gap-16 wf-mt-32">
+        <div>
+          <label class="wf-label">Email</label>
+          <input class="wf-input" type="email" placeholder="your@email.com">
+        </div>
+
+        <button class="wf-btn">Send Code</button>
+
+        <div class="wf-note">
+          → Sends OTP to email. No password auth.<br>
+          → Rate limit: 1 code per 60 sec.
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="wf-divider wf-mt-24">or continue with</div>
+
+      <!-- Social buttons -->
+      <div class="wf-stack wf-gap-12 wf-mt-24">
+        <button class="wf-btn wf-btn-secondary wf-row wf-gap-8" style="justify-content:center;">
+          <div class="wf-img" style="width:20px; height:20px; border-radius:4px; border:none;">G</div>
+          Google
+        </button>
+        <button class="wf-btn wf-btn-secondary wf-row wf-gap-8" style="justify-content:center;">
+          <div class="wf-img" style="width:20px; height:20px; border-radius:4px; border:none;">A</div>
+          Apple
+        </button>
+      </div>
+
+      <!-- Footer links -->
+      <div style="margin-top:auto; padding-top:24px; text-align:center;">
+        <div class="wf-caption">
+          By continuing, you agree to our
+          <a href="#" style="color:var(--wf-text); font-weight:600;">Terms</a> &
+          <a href="#" style="color:var(--wf-text); font-weight:600;">Privacy</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
