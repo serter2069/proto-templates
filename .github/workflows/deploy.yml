@@ -21,6 +21,9 @@ jobs:
           }
           EOF
 
+      - name: Validate style consistency
+        run: node validate-styles.js
+
       - name: Deploy static files
         run: |
           sudo mkdir -p /var/www/proto
