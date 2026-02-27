@@ -3,262 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Spec</title>
+  <title>Brand Spec — EXAMPLE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="components.css">
   <style>
     body {
       justify-content: flex-start;
       align-items: flex-start;
-      padding: var(--space-lg);
-      max-width: 800px;
+      padding: var(--sp-24);
+      max-width: 700px;
       margin: 0 auto;
     }
     .page { width: 100%; }
-    section { margin-bottom: var(--space-xxl); width: 100%; }
+    section { margin-bottom: var(--sp-48); width: 100%; }
     .section-title {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: var(--text-label);
+      font-weight: var(--weight-bold);
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: var(--space-md);
-      padding-bottom: var(--space-xs);
-      border-bottom: 2px solid var(--border-light);
+      color: var(--color-muted);
+      margin-bottom: var(--sp-16);
+      padding-bottom: var(--sp-8);
+      border-bottom: 2px solid var(--color-text);
+    }
+    .section-budget {
+      font-size: var(--text-caption);
+      color: var(--color-danger);
+      font-weight: var(--weight-bold);
+      text-transform: uppercase;
+      margin-top: var(--sp-4);
     }
 
     /* Color swatches */
-    .swatches { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+    .swatches { display: flex; flex-wrap: wrap; gap: var(--sp-8); }
     .swatch {
-      width: 100px;
-      border: var(--border-w) solid var(--border);
+      border: var(--border-w) solid var(--color-text);
       border-radius: var(--radius-sm);
       overflow: hidden;
       box-shadow: var(--shadow-sm);
-      background: var(--surface);
+      background: var(--color-card);
+      width: 80px;
     }
-    .swatch-color { height: 60px; }
-    .swatch-label {
-      padding: 6px 8px;
-      font-size: 11px;
-      font-weight: 600;
-      line-height: 1.3;
+    .swatch-color { height: 56px; }
+    .swatch-info {
+      padding: var(--sp-4) var(--sp-8);
+      font-size: var(--text-caption);
+      font-weight: var(--weight-bold);
+      line-height: 1.4;
     }
-    .swatch-hex { font-weight: 400; color: var(--text-muted); font-size: 10px; }
+    .swatch-hex { font-weight: var(--weight-normal); color: var(--color-muted); }
 
-    /* Type samples */
+    /* Type row */
     .type-row {
       display: flex;
       align-items: baseline;
-      gap: var(--space-md);
-      padding: var(--space-sm) 0;
-      border-bottom: 1px solid var(--border-light);
+      gap: var(--sp-16);
+      padding: var(--sp-8) 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-    .type-label { font-size: 11px; color: var(--text-light); min-width: 70px; font-weight: 500; }
+    .type-meta {
+      font-size: var(--text-caption);
+      color: var(--color-muted);
+      min-width: 80px;
+      font-weight: var(--weight-bold);
+    }
 
     /* Buttons row */
-    .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; }
-    .btn-row .btn { width: auto; padding: 10px 24px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: var(--sp-8); align-items: center; }
+    .btn-row .btn { width: auto; padding: 0 var(--sp-24); }
 
     /* Shadows demo */
-    .shadow-row { display: flex; gap: var(--space-lg); flex-wrap: wrap; }
+    .shadow-row { display: flex; gap: var(--sp-24); flex-wrap: wrap; }
     .shadow-box {
       width: 100px;
       height: 70px;
-      background: var(--surface);
-      border: var(--border-w) solid var(--border);
+      background: var(--color-card);
+      border: var(--border-w) solid var(--color-text);
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: var(--text-label);
+      font-weight: var(--weight-bold);
     }
 
-    /* Input states */
-    .input-row { display: flex; flex-direction: column; gap: var(--space-sm); max-width: 320px; }
-    .input-error { border-color: var(--error); }
-    .error-text { color: var(--error); font-size: 12px; font-weight: 500; margin-top: -4px; }
-
     /* Radius demo */
-    .radius-row { display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center; }
+    .radius-row { display: flex; gap: var(--sp-16); flex-wrap: wrap; }
     .radius-box {
       width: 64px;
       height: 64px;
-      background: var(--accent);
-      border: var(--border-w) solid var(--border);
+      background: var(--color-secondary);
+      border: var(--border-w) solid var(--color-text);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      font-weight: 700;
+      font-size: var(--text-caption);
+      font-weight: var(--weight-black);
     }
 
     /* Spacing demo */
-    .spacing-row { display: flex; gap: var(--space-sm); align-items: flex-end; flex-wrap: wrap; }
+    .spacing-row { display: flex; gap: var(--sp-4); align-items: flex-end; flex-wrap: wrap; }
     .spacing-block {
-      background: var(--primary);
-      border: 2px solid var(--border);
+      background: var(--color-primary);
+      border: 2px solid var(--color-text);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 9px;
-      font-weight: 700;
+      font-weight: var(--weight-black);
       color: #fff;
+    }
+
+    /* Example notice */
+    .example-banner {
+      background: var(--color-danger);
+      border: var(--border-w) solid var(--color-text);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-sm);
+      padding: var(--sp-16);
+      margin-bottom: var(--sp-32);
+      color: var(--color-card);
+    }
+    .example-banner strong {
+      font-size: var(--text-body);
+      font-weight: var(--weight-black);
+      text-transform: uppercase;
+    }
+    .example-banner p {
+      font-size: var(--text-label);
+      margin-top: var(--sp-4);
+      opacity: 0.9;
+    }
+
+    /* Budget bar */
+    .budget-bar {
+      background: var(--color-text);
+      border-radius: var(--radius-sm);
+      padding: var(--sp-8) var(--sp-16);
+      margin-bottom: var(--sp-32);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-8) var(--sp-24);
+    }
+    .budget-item {
+      font-size: var(--text-caption);
+      font-weight: var(--weight-bold);
+      color: var(--color-card);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .budget-item span {
+      color: var(--color-primary);
     }
   </style>
 </head>
 <body>
   <div class="page">
 
-    <!-- HEADER -->
-    <div style="margin-bottom: var(--space-xxl);">
-      <div class="logo">Date<span class="logo-accent">Rabbit</span></div>
-      <p class="small text-muted mt-sm">Neo-Brutalism Design System</p>
+    <!-- EXAMPLE NOTICE -->
+    <div class="example-banner">
+      <strong>⚠ This is an EXAMPLE Brand Spec</strong>
+      <p>DateRabbit · Neo-Brutalism style. Replace with YOUR project's colors, font, and components.</p>
+      <p>The STRUCTURE and LIMITS below are mandatory. The specific values are just an example.</p>
     </div>
 
-    <!-- COLORS -->
+    <!-- DESIGN BUDGET -->
+    <div class="budget-bar">
+      <div class="budget-item"><span>7</span> colors</div>
+      <div class="budget-item"><span>1</span> font</div>
+      <div class="budget-item"><span>3</span> weights</div>
+      <div class="budget-item"><span>5</span> text sizes</div>
+      <div class="budget-item"><span>3</span> radii</div>
+      <div class="budget-item"><span>2</span> shadows</div>
+      <div class="budget-item"><span>4</span> button types</div>
+      <div class="budget-item"><span>6</span> spacings</div>
+    </div>
+
+    <!-- HEADER -->
+    <div style="margin-bottom: var(--sp-48);">
+      <div class="logo">Date<span class="logo-accent">Rabbit</span></div>
+      <p class="caption mt-8">Neo-Brutalism Design System</p>
+    </div>
+
+    <!-- COLORS — 7 max -->
     <section>
       <div class="section-title">Colors</div>
-      <div class="swatches">
+      <div class="section-budget">⛔ Max 7 — if it's not here, it doesn't exist</div>
+      <div class="swatches" style="margin-top: var(--sp-16);">
         <div class="swatch">
-          <div class="swatch-color" style="background:#FF2A5F"></div>
-          <div class="swatch-label">Primary<br><span class="swatch-hex">#FF2A5F</span></div>
+          <div class="swatch-color" style="background: var(--color-bg)"></div>
+          <div class="swatch-info">bg<br><span class="swatch-hex">#F4F0EA</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#4DF0FF"></div>
-          <div class="swatch-label">Accent<br><span class="swatch-hex">#4DF0FF</span></div>
+          <div class="swatch-color" style="background: var(--color-card); border-bottom: 1px solid #eee"></div>
+          <div class="swatch-info">card<br><span class="swatch-hex">#FFFFFF</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#FFE600"></div>
-          <div class="swatch-label">Secondary<br><span class="swatch-hex">#FFE600</span></div>
+          <div class="swatch-color" style="background: var(--color-text)"></div>
+          <div class="swatch-info">text<br><span class="swatch-hex">#000000</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#F4F0EA"></div>
-          <div class="swatch-label">Background<br><span class="swatch-hex">#F4F0EA</span></div>
+          <div class="swatch-color" style="background: var(--color-primary)"></div>
+          <div class="swatch-info">primary<br><span class="swatch-hex">#FF2A5F</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#FFFFFF; border-bottom: 1px solid #eee"></div>
-          <div class="swatch-label">Surface<br><span class="swatch-hex">#FFFFFF</span></div>
+          <div class="swatch-color" style="background: var(--color-secondary)"></div>
+          <div class="swatch-info">secondary<br><span class="swatch-hex">#4DF0FF</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#000000"></div>
-          <div class="swatch-label" style="color:#000">Text / Border<br><span class="swatch-hex">#000000</span></div>
+          <div class="swatch-color" style="background: var(--color-muted)"></div>
+          <div class="swatch-info">muted<br><span class="swatch-hex">#999999</span></div>
         </div>
         <div class="swatch">
-          <div class="swatch-color" style="background:#4CAF50"></div>
-          <div class="swatch-label">Success<br><span class="swatch-hex">#4CAF50</span></div>
-        </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background:#FF3B30"></div>
-          <div class="swatch-label">Error<br><span class="swatch-hex">#FF3B30</span></div>
+          <div class="swatch-color" style="background: var(--color-danger)"></div>
+          <div class="swatch-info">danger<br><span class="swatch-hex">#E53E3E</span></div>
         </div>
       </div>
     </section>
 
-    <!-- TYPOGRAPHY -->
+    <!-- TYPOGRAPHY — 1 font, 3 weights, 5 sizes -->
     <section>
       <div class="section-title">Typography — Space Grotesk</div>
-      <div class="type-row">
-        <span class="type-label">Display</span>
-        <span class="display">Aa Bb 42px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">H1</span>
-        <span class="h1">Heading One 32px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">H2</span>
-        <span class="h2">Heading Two 24px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">H3</span>
-        <span class="h3">Heading Three 18px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">Body</span>
-        <span class="body">Body text at 15px line-height 24px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">Small</span>
-        <span class="small">Small text 13px</span>
-      </div>
-      <div class="type-row">
-        <span class="type-label">Caption</span>
-        <span class="caption">Caption 12px uppercase</span>
+      <div class="section-budget">⛔ 1 font family · 3 weights (400, 700, 900) · 5 sizes only</div>
+      <div style="margin-top: var(--sp-16);">
+        <div class="type-row">
+          <span class="type-meta">H1 · 32px · 900</span>
+          <span class="h1">Welcome Back</span>
+        </div>
+        <div class="type-row">
+          <span class="type-meta">H2 · 22px · 700</span>
+          <span class="h2">Section Title</span>
+        </div>
+        <div class="type-row">
+          <span class="type-meta">Body · 16px · 400</span>
+          <span class="body">Regular body text for descriptions and content</span>
+        </div>
+        <div class="type-row">
+          <span class="type-meta">Label · 12px · 700</span>
+          <span class="label" style="margin-bottom:0">FIELD LABEL</span>
+        </div>
+        <div class="type-row">
+          <span class="type-meta">Caption · 11px · 400</span>
+          <span class="caption">Hints, timestamps, secondary info</span>
+        </div>
       </div>
     </section>
 
-    <!-- BUTTONS -->
+    <!-- BUTTONS — 4 types -->
     <section>
       <div class="section-title">Buttons</div>
-      <div class="btn-row">
+      <div class="section-budget">⛔ 4 types only · 44px height · danger = primary in danger color</div>
+      <div class="btn-row" style="margin-top: var(--sp-16);">
         <button class="btn btn-primary">Primary</button>
-        <button class="btn btn-accent">Accent</button>
-        <button class="btn btn-outline">Outline</button>
+        <button class="btn btn-secondary">Secondary</button>
         <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-link">Link</button>
       </div>
     </section>
 
-    <!-- INPUTS -->
+    <!-- INPUTS — 3 states -->
     <section>
       <div class="section-title">Inputs</div>
-      <div class="input-row">
+      <div class="section-budget">⛔ 3 states: default, focus, error</div>
+      <div class="stack gap-16" style="max-width: 320px; margin-top: var(--sp-16);">
         <div>
           <label class="label">Default</label>
           <input class="input" type="text" placeholder="Placeholder text">
         </div>
         <div>
           <label class="label">With value</label>
-          <input class="input" type="text" value="user@example.com">
+          <input class="input" type="text" value="user@example.com" style="border-color: var(--color-primary); box-shadow: var(--shadow-sm);">
         </div>
         <div>
-          <label class="label">Error</label>
+          <label class="label" style="color: var(--color-danger)">Error</label>
           <input class="input input-error" type="text" value="bad-email">
           <p class="error-text">Please enter a valid email</p>
         </div>
       </div>
     </section>
 
-    <!-- CARDS & TAGS -->
+    <!-- CARDS — 2 sizes -->
     <section>
-      <div class="section-title">Card + Tags</div>
-      <div class="card" style="max-width: 320px;">
-        <span class="tag">New</span>
-        <p class="h3 mt-sm">Card Title</p>
-        <p class="small text-muted mt-xs">Card description with some body text to show how content looks inside a card component.</p>
-        <button class="btn btn-primary mt-md">Action</button>
+      <div class="section-title">Cards</div>
+      <div class="section-budget">⛔ 2 sizes: sm (r8, shadow-sm) and lg (r16, shadow-lg)</div>
+      <div style="display: flex; gap: var(--sp-16); flex-wrap: wrap; margin-top: var(--sp-16);">
+        <div class="card-sm" style="width: 200px;">
+          <div class="label">Card SM</div>
+          <p class="caption mt-4">radius: 8px · shadow: sm</p>
+        </div>
+        <div class="card-lg" style="width: 200px;">
+          <div class="label">Card LG</div>
+          <p class="caption mt-4">radius: 16px · shadow: lg</p>
+        </div>
       </div>
     </section>
 
-    <!-- SHADOWS -->
+    <!-- BADGES & AVATARS -->
     <section>
-      <div class="section-title">Shadows (solid offset, no blur)</div>
-      <div class="shadow-row">
-        <div class="shadow-box" style="box-shadow: var(--shadow-sm)">sm<br>2px</div>
-        <div class="shadow-box" style="box-shadow: var(--shadow-md)">md<br>4px</div>
-        <div class="shadow-box" style="box-shadow: var(--shadow-lg)">lg<br>6px</div>
+      <div class="section-title">Badges & Avatars</div>
+      <div style="display: flex; gap: var(--sp-8); flex-wrap: wrap; align-items: center; margin-top: var(--sp-16);">
+        <span class="badge badge-primary">New</span>
+        <span class="badge badge-secondary">Verified</span>
+        <span class="badge badge-muted">Draft</span>
+        <div class="avatar avatar-primary">A</div>
+        <div class="avatar avatar-secondary">B</div>
+      </div>
+    </section>
+
+    <!-- SHADOWS — 2 only -->
+    <section>
+      <div class="section-title">Shadows</div>
+      <div class="section-budget">⛔ 2 shadows only: sm (4px) and lg (8px)</div>
+      <div class="shadow-row" style="margin-top: var(--sp-16);">
+        <div class="shadow-box" style="box-shadow: var(--shadow-sm)">sm · 4px</div>
+        <div class="shadow-box" style="box-shadow: var(--shadow-lg)">lg · 8px</div>
         <div class="shadow-box" style="box-shadow: none">none</div>
       </div>
     </section>
 
-    <!-- BORDER RADIUS -->
+    <!-- RADII — 3 only -->
     <section>
       <div class="section-title">Border Radius</div>
-      <div class="radius-row">
+      <div class="section-budget">⛔ 3 radii only: 8px, 16px, full</div>
+      <div class="radius-row" style="margin-top: var(--sp-16);">
         <div class="radius-box" style="border-radius: var(--radius-sm)">8px</div>
-        <div class="radius-box" style="border-radius: var(--radius-lg)">12px</div>
-        <div class="radius-box" style="border-radius: var(--radius-xl)">16px</div>
+        <div class="radius-box" style="border-radius: var(--radius-lg)">16px</div>
         <div class="radius-box" style="border-radius: var(--radius-full)">full</div>
       </div>
     </section>
 
-    <!-- SPACING -->
+    <!-- SPACING — 6 values -->
     <section>
-      <div class="section-title">Spacing Scale (4px grid)</div>
-      <div class="spacing-row">
+      <div class="section-title">Spacing Scale</div>
+      <div class="section-budget">⛔ 6 values only: 4 · 8 · 16 · 24 · 32 · 48</div>
+      <div class="spacing-row" style="margin-top: var(--sp-16);">
         <div class="spacing-block" style="width:20px;height:20px">4</div>
         <div class="spacing-block" style="width:28px;height:28px">8</div>
         <div class="spacing-block" style="width:40px;height:40px">16</div>
@@ -278,16 +358,6 @@
         <input class="otp-digit" type="text" placeholder="·">
         <input class="otp-digit" type="text" placeholder="·">
         <input class="otp-digit" type="text" placeholder="·">
-      </div>
-    </section>
-
-    <!-- BORDERS -->
-    <section>
-      <div class="section-title">Border Weights</div>
-      <div style="display:flex; gap: var(--space-md); flex-wrap: wrap;">
-        <div style="padding: 12px 20px; border: 2px solid #000; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;">2px thin</div>
-        <div style="padding: 12px 20px; border: 3px solid #000; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;">3px normal</div>
-        <div style="padding: 12px 20px; border: 4px solid #000; border-radius: var(--radius-sm); font-size: 13px; font-weight: 600;">4px thick</div>
       </div>
     </section>
 
